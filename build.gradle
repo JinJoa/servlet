@@ -21,12 +21,14 @@ configurations {
 }
 
 repositories {
-	mavenCentral()
+	mavenCentral()           // 기본 Maven 중앙 저장소
+	gradlePluginPortal()     // Spring Boot 플러그인 리포지토리 추가
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
+	compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0' // 서블릿 API 추가 (필수)
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
